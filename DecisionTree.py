@@ -15,7 +15,6 @@ from DecisionTreeTool import findBestFeature
     the core algorithm of building a decision tree
 """
 def build_tree(data,labels,div_function,tree):
-    # print("in build_tree")
     node = tree.newTreeNode()
     print("node: ",node.getNodeId())
     print("data size = ",len(data))
@@ -31,8 +30,8 @@ def build_tree(data,labels,div_function,tree):
         return node.getNodeId()
 
     if len(labels) == 0:
-        maxlabel = findMaxLabel(data)
-        node.setTag(maxlabel)
+        maxLabel = findMaxLabel(data)
+        node.setTag(maxLabel)
         return node.getNodeId()
 
     bestIndex = findBestFeature(data,labels,div_function)

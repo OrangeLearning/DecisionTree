@@ -10,15 +10,13 @@
     :param
         nodes : the set of nodes
         edges : the set of edges
-        format 
+        format : the graph direction
 """
 def getMermaid(nodes,edges,format = "TB"):
     res = "graph " + format + "\n"
-
     for node in nodes:
         id = "_t" +str(node['id'])
         tag = node['tag']
-
         res += id + "[" + "tag = " + tag + "]\n"
 
     for edge in edges:
