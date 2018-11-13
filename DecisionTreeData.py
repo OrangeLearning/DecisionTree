@@ -52,6 +52,23 @@ def getWaterMelonData():
         dataSet.append(tmp)
     return dataSet
 
+def getWatermelonFeatures():
+    dataSet = getWaterMelonData()
+    featureNumber = len(labels)
+
+    print("featureNumber = ",featureNumber)
+
+    features = {}
+
+    for i in range(featureNumber):
+        features[labels[i]] = set()
+
+    for item in dataSet:
+        for i in range(featureNumber):
+            features[labels[i]].add(item['x'][i])
+
+    return features
+
 if __name__ == '__main__':
     print(getWaterMelonData())
     print(getWaterMelonLabel())

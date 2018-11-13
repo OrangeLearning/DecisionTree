@@ -166,7 +166,7 @@ def calcGini_index(dataSet,i):
     find max label in a data set
 """
 def findMaxLabel(dataSet) : 
-    labels = [item[-1] for item in dataSet]
+    labels = [item['y'] for item in dataSet]
     maxlabel = None
     maxcnt = 0
     cnt_mapper = {}
@@ -211,9 +211,10 @@ def findBestFeature(dataSet,label,div_function):
 
     return bestIndex
 
+
 def main():
     import DecisionTreeData as Data
-    print(calcShannonEnt(Data.getWaterMelonData()))
 
+    print(Data.getWaterMelonData())
 if __name__ == '__main__':
     main()
